@@ -78,6 +78,14 @@
 					<div class="row placeholders">
 						<div class="col-xs-6 col-sm-3 placeholder">
 							<div class="input-group">
+								<span class="input-group-btn">
+									<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Choose...<span class="caret"></span>
+									</a> 
+									<ul class="dropdown-menu" role="menu" id="http_https"> 
+										<li><a href="#">http://</a></li> 
+										<li><a href="#">https://</a></li> 
+									</ul>
+								</span>
 								<input type="text" class="form-control" placeholder="URL..." id="parse_url">
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" id="parse_btn">Parse!</button>
@@ -87,7 +95,19 @@
 							<span class="text-muted">Something else</span>
 						</div>
 						<div class="col-xs-6 col-sm-3 placeholder">
-							<img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+							<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group with nested dropdown">
+								<a href="#" class="btn btn-default" role="button"><input type="checkbox"> Follow redirects</a>
+								<div class="btn-group" role="group">
+									<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+										GET<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">POST</a></li>
+										<li><a href="#">HEAD</a></li>
+										<li><a href="#">OPTIONS</a></li>
+									</ul>
+								</div>
+							</div>
 							<h4>Label</h4>
 							<span class="text-muted">Something else</span>
 						</div>
@@ -101,25 +121,25 @@
 					<h2 class="sub-header">Section title</h2>
 					<div class="table-responsive">
 						<table class="table table-striped" id="parse_results">
-<!--							<thead>
-								<tr>
-									<th>#</th>
-									<th>Header</th>
-									<th>Header</th>
-									<th>Header</th>
-									<th>Header</th>
-								</tr>
-							</thead>
-							<tbody>
-			<tr>
-			<td>1,001</td>
-			<td>Lorem</td>
-			<td>ipsum</td>
-			<td>dolor</td>
-			<td>sit</td>
-			</tr>
-								-->
-							</tbody>
+							<!--							<thead>
+		   <tr>
+		   <th>#</th>
+		   <th>Header</th>
+		   <th>Header</th>
+		   <th>Header</th>
+		   <th>Header</th>
+		   </tr>
+		   </thead>
+		   <tbody>
+		   <tr>
+		   <td>1,001</td>
+		   <td>Lorem</td>
+		   <td>ipsum</td>
+		   <td>dolor</td>
+		   <td>sit</td>
+		   </tr>
+							-->
+		   </tbody>
 						</table>
 					</div>
 				</div>

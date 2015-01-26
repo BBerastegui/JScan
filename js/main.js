@@ -3,6 +3,14 @@ $('#parse_btn').click( function() {
 	parseUrl(document.getElementById("parse_url").value);
 });
 
+$(".dropdown-menu li a").click(function(){
+	console.log($(this));
+	$(".btn:first-child").text($(this).text());
+	$(".btn:first-child").val($(this).text());
+});
+
+// /CLICKS
+
 function parseUrl(url){
 	doRequest(url,'GET','','');
 	//	alert(url);
@@ -26,15 +34,15 @@ function printResultsParse(json){
 	var table = document.getElementById("parse_results");
 	var header = table.createTHead();
 	var headerRow = header.insertRow(0);
-/*	
-	for (i = 0; i < Object.keys(objJson).length; i++){
+	/*	
+		for (i = 0; i < Object.keys(objJson).length; i++){
 		var headerCell = headerRow.insertCell(i);
 		headerCell.innerHTML = Object.keys(objJson)[i];
-	}
-*/
+		}
+		*/
 
 	elements = parseHTML(objJson.Body, "a");
-	
+
 	for (i = 0; i < elements.length; i++){
 		var row = table.insertRow(i);
 		var cell = row.insertCell(0);
@@ -49,14 +57,14 @@ function parseHTML(html, tag){
 	console.log(elements);
 	// If tag a, fix the hrefs to get full references
 	if (tag == "a"){
-	for (i = 0; i < elements.length; i++){
-		if (elements[i].host == ""){
-			console.log(elements[i]);
-			// TODO Fix the uncompleted href !!!
-			elements[i].href = "[HOST]"+elements[i].attributes.href.value;
-			console.log(elements[i].href);
+		for (i = 0; i < elements.length; i++){
+			if (elements[i].host == ""){
+				console.log(elements[i]);
+				// TODO Fix the uncompleted href !!!
+				elements[i].href = document.getElementById("parse_url").value+"/"+elements[i].attributes.href.value;
+				console.log(elements[i].href);
+			}
 		}
-	}
 	}
 	return elements;
 }
