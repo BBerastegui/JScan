@@ -1,12 +1,11 @@
 // CLICKS
 $('#parse_btn').click( function() {
-	parseUrl(document.getElementById("parse_url").value);
+	parseUrl(document.getElementById("http_https").innerHTML+document.getElementById("parse_url").value);
 });
 
 $(".dropdown-menu li a").click(function(){
-	console.log($(this));
-	$(".btn:first-child").text($(this).text());
-	$(".btn:first-child").val($(this).text());
+	$(this).parents(".btn-group").find('.selection').text($(this).text());
+	$(this).parents(".btn-group").find('.selection').val($(this).text());
 });
 
 // /CLICKS
