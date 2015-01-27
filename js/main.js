@@ -12,7 +12,6 @@ $(".dropdown-menu li a").click(function(){
 
 function parseUrl(url){
 	doRequest(url,'GET','','');
-	//	alert(url);
 }
 
 function doRequest(url, method, header, body){
