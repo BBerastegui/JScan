@@ -37,7 +37,7 @@ function printResultsParse(json){
 		var headerCell = headerRow.insertCell(i);
 		headerCell.innerHTML = Object.keys(objJson)[i];
 		}
-		*/
+	*/
 
 	elements = parseHTML(objJson.Body, "a");
 
